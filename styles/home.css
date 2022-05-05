@@ -1,1 +1,37 @@
 /* add home page styles here */
+
+.box {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+/* How do I make a Grid Gap????*/
+    grid-template-areas: "grid-1 grid-1 grid-2 grid-2"
+    "grid-3 grid-3 grid-3 grid-3"
+    "grid-5 grid-5 grid-4 grid-4"
+    "grid-5 grid-5 grid-6 grid-6";
+    
+    
+}
+
+.grid-1 {
+    grid-area: grid-1;
+    background-color: lightblue;
+}
+.grid-2 {
+    grid-area: grid-2;
+    background-color: lightgrey;
+}
+.grid-3 {
+    grid-area: grid-3;
+    background-color: lightcoral
+}
+.grid-4 {
+    grid-area: grid-4;
+    background-color: lightpink;
+}
+.grid-5 {
+    grid-area: grid-5;
+    background-color: lightseagreen;
+}
+
+
