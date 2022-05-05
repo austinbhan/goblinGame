@@ -1,16 +1,15 @@
 /* add home page styles here */
 
-.box {
+.grid {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 /* How do I make a Grid Gap????*/
-    grid-template-areas: "grid-1 grid-1 grid-2 grid-2"
+    grid-template-areas: 
+    "grid-1 grid-1 grid-1 grid-2"
     "grid-3 grid-3 grid-3 grid-3"
     "grid-5 grid-5 grid-4 grid-4"
-    "grid-5 grid-5 grid-6 grid-6";
-    
-    
+    "grid-5 grid-5 grid-6 grid-6";  
 }
 
 .grid-1 {
@@ -33,5 +32,3 @@
     grid-area: grid-5;
     background-color: lightseagreen;
 }
-
-
