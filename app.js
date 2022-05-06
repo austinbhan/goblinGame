@@ -3,33 +3,27 @@
 const goblinName = document.getElementById('goblin-name');
 const goblinNameButton = document.getElementById('goblin-name-button');
 const activeGoblinsDiv = document.getElementById('active-goblins-div');
+const goblinCreation = document.getElementById('goblin-creation');
 
 
 // let state
-let goblins = [{ name: 'Broccoli', health: `${randomHealth}` }];
-let goblinHealth = Math.ceil(Math.random() * 5);
-console.log(goblinHealth);
+let goblins = [{ name: 'Broccoli', health: 5 }];
+
 // set event listeners 
 
 // Goblin Name Button and Append Text
-goblinNameButton.addEventListener('click', () => {
-    let goblinStat = {
-        name: goblinName.value,
-        health: randomHealth,
-    };
-    goblins.push(goblinStat);
-    displayGoblins();
-});
-`function displayGoblins() {
-    activeGoblinsDiv.textContent = '';
-    for (let name of goblins) {
-        const li = document.createElement('li');
-        li.textContent = name;
-        activeGoblinsDiv.append(li);
-    }
-}`
 
-// Set Player Health
+goblinCreation.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newName = goblinName.value;
+    const newGoblin = { name: newName, health: (Math.ceil(Math.random() * 5)) };
+    goblins.push(newGoblin);
+    console.log(goblins);
+});
+
+// Set Pl;
+
+
 
 
 
