@@ -13,7 +13,7 @@ let goblins = [];
 
 goblinCreation.addEventListener('submit', (e) => {
     e.preventDefault();
-    const newName = goblinName.value;
+    const newName = goblinName.value || 'Broccolini';
     let newGoblin = { name: newName, health: (Math.ceil(Math.random() * 5)) };
     goblins.push(`Goblin Name: ${newGoblin.name}, Goblin Health: ${newGoblin.health}`);
     
