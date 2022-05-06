@@ -31,4 +31,6 @@
 .grid-5 {
     grid-area: grid-5;
     background-color: lightseagreen;
+    display: flex;
+    flex-direction: column;
 }

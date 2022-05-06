@@ -4,7 +4,6 @@ const goblinName = document.getElementById('goblin-name');
 const activeGoblinsDiv = document.getElementById('active-goblins-div');
 const goblinCreation = document.getElementById('goblin-creation');
 
-
 // let state
 let goblins = [];
 let playerHealth = 10;
@@ -23,9 +22,9 @@ goblinCreation.addEventListener('submit', (e) => {
 function displayGoblins() {
     activeGoblinsDiv.textContent = '';
     for (let goblin of goblins) {
-        let li = document.createElement('li');
-        li.textContent = goblin;
-        activeGoblinsDiv.append(li);
+        let button = document.createElement('button');
+        button.textContent = goblin;
+        activeGoblinsDiv.append(button);
     }
 }
 
