@@ -4,11 +4,12 @@
 const activeGoblinsDiv = document.getElementById('active-goblins-div');
 const goblinCreation = document.getElementById('goblin-creation');
 const startingHealth = document.getElementById('starting-health');
+const defeatedGoblins = document.getElementById('defeated-goblins');
 
 // let state
 let goblins = [{ name: 'Broccoli', health: 5 }, { name: 'Carrot', health: 4 }];
 let playerHealth = 5;
-let defeatedGoblins = 0;
+let goblinKillCounter = 0;
 
 // set event listeners 
 
@@ -56,6 +57,8 @@ function gamePlay(goblin) {
 function endGame(goblin) {
     if (goblin.health === 0) {
         alert(`Oh my god, you killed ${goblin.name}!`);
+        goblinKillCounter++;
+        defeatedGoblins.textContent = goblinKillCounter;
     } else if (playerHealth === 0){
         alert(`You got killed by ${goblin.name}!`);
     } else displayGoblins();
