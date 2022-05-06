@@ -34,20 +34,27 @@ function displayGoblins() {
 
         button.addEventListener('click', () => {
             gamePlay(goblin);
-            // Making Gameplay Function
-            // Making Endgame Function
-            endGame(goblin);
+            // See Line 55-56
         });
     }
 }
 
 function gamePlay(goblin) {
+    if (playerHealth === 0) {
+        return;
+    }
+    if (goblin.health === 0) {
+        return;
+    }
     let randomNum = Math.ceil(Math.random() * 2);
     if (randomNum === 1) {
         alert(`You hit ${goblin.name}!`);
         goblin.health--;
         displayGoblins();
     } 
+    if (goblin.health === 0) {
+        endGame(goblin);
+    }
     else {
         alert(`You got hit by ${goblin.name}!`);
         playerHealth--;
