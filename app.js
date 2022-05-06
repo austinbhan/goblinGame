@@ -40,6 +40,9 @@ function displayGoblins() {
 function gamePlay(goblin) {
     let randomNum = Math.ceil(Math.random() * 2);
     if (randomNum === 1) {
-        console.log(goblin.health--);
-    } else {playerHealth--}
+        goblin.health--;
+        displayGoblins();
+    } else {
+        playerHealth--;
+        startingHealth.textContent = playerHealth;}
 }
