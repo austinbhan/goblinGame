@@ -7,7 +7,7 @@ const startingHealth = document.getElementById('starting-health');
 const defeatedGoblins = document.getElementById('defeated-goblins');
 
 // let state
-let goblins = [{ name: 'Broccoli', health: 5 }, { name: 'Carrot', health: 4 }];
+let goblins = [{ name: 'Broccoli', health: 5, emoji: '😀' }, { name: 'Carrot', health: 4, emoji: '😀' }];
 let playerHealth = 5;
 let goblinKillCounter = 0;
 
@@ -20,7 +20,7 @@ goblinCreation.addEventListener('submit', (e) => {
     e.preventDefault();
     const formD = new FormData(goblinCreation);
     const goblinName = formD.get('goblin-name');    
-    let goblinStats = { name: goblinName, health: (Math.ceil(Math.random() * 5)) };
+    let goblinStats = { name: goblinName, health: (Math.ceil(Math.random() * 5)), emoji: '😀' };
     goblins.push(goblinStats);
     displayGoblins();
 });
@@ -29,7 +29,7 @@ function displayGoblins() {
     activeGoblinsDiv.textContent = '';
     for (let goblin of goblins) {
         let button = document.createElement('button');
-        button.textContent = `${goblin.name}, ${goblin.health} health`;
+        button.textContent = `${goblin.name}, ${goblin.health} health, ${goblin.emoji}`;
         
         
         activeGoblinsDiv.append(button); // Emoji Experiement
