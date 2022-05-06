@@ -6,7 +6,6 @@ const goblinCreation = document.getElementById('goblin-creation');
 
 // let state
 let goblins = [];
-let playerHealth = 10;
 
 // set event listeners 
 
@@ -17,14 +16,19 @@ goblinCreation.addEventListener('submit', (e) => {
     const newName = goblinName.value;
     let newGoblin = { name: newName, health: (Math.ceil(Math.random() * 5)) };
     goblins.push(`Goblin Name: ${newGoblin.name}, Goblin Health: ${newGoblin.health}`);
+    
     displayGoblins();
 });
+
 function displayGoblins() {
     activeGoblinsDiv.textContent = '';
     for (let goblin of goblins) {
         let button = document.createElement('button');
         button.textContent = goblin;
         activeGoblinsDiv.append(button);
+
+        button.addEventListener('click', () => {
+            // Insert More Code Here
+        });
     }
 }
-
