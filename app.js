@@ -7,7 +7,8 @@ const startingHealth = document.getElementById('starting-health');
 
 // let state
 let goblins = [{ name: 'Broccoli', health: 5 }, { name: 'Carrot', health: 4 }];
-let playerHealth = 10;
+let playerHealth = 5;
+let defeatedGoblins = 0;
 
 // set event listeners 
 
@@ -33,6 +34,8 @@ function displayGoblins() {
         button.addEventListener('click', () => {
             gamePlay(goblin);
             // Making Gameplay Function
+            // Making Endgame Function
+            endGame(goblin);
         });
     }
 }
@@ -40,9 +43,20 @@ function displayGoblins() {
 function gamePlay(goblin) {
     let randomNum = Math.ceil(Math.random() * 2);
     if (randomNum === 1) {
+        alert(`You hit ${goblin.name}!`);
         goblin.health--;
         displayGoblins();
-    } else {
+    } 
+    else {
+        alert(`You got hit by ${goblin.name}!`);
         playerHealth--;
         startingHealth.textContent = playerHealth;}
+}
+
+function endGame(goblin) {
+    if (goblin.health === 0) {
+        alert(`Oh my god, you killed ${goblin.name}!`);
+    } else if (playerHealth === 0){
+        alert(`You got killed by ${goblin.name}!`);
+    } else displayGoblins();
 }
