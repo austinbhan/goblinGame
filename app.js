@@ -31,12 +31,15 @@ function displayGoblins() {
         activeGoblinsDiv.append(button);
 
         button.addEventListener('click', () => {
-            console.log('This button works!');
+            gamePlay(goblin);
             // Making Gameplay Function
-        })
+        });
     }
 }
 
-function gamePlay() {
-
+function gamePlay(goblin) {
+    let randomNum = Math.ceil(Math.random() * 2);
+    if (randomNum === 1) {
+        console.log(goblin.health--);
+    } else {playerHealth--}
 }
