@@ -1,13 +1,13 @@
 // import functions and grab DOM elements
 
 const goblinName = document.getElementById('goblin-name');
-const goblinNameButton = document.getElementById('goblin-name-button');
 const activeGoblinsDiv = document.getElementById('active-goblins-div');
 const goblinCreation = document.getElementById('goblin-creation');
 
 
 // let state
-let goblins = [{ name: 'Broccoli', health: 5 }];
+let goblins = [];
+let playerHealth = 10;
 
 // set event listeners 
 
@@ -16,17 +16,16 @@ let goblins = [{ name: 'Broccoli', health: 5 }];
 goblinCreation.addEventListener('submit', (e) => {
     e.preventDefault();
     const newName = goblinName.value;
-    const newGoblin = { name: newName, health: (Math.ceil(Math.random() * 5)) };
-    goblins.push(newGoblin);
-    console.log(goblins);
+    let newGoblin = { name: newName, health: (Math.ceil(Math.random() * 5)) };
+    goblins.push(`Goblin Name: ${newGoblin.name}, Goblin Health: ${newGoblin.health}`);
+    displayGoblins();
 });
+function displayGoblins() {
+    activeGoblinsDiv.textContent = '';
+    for (let goblin of goblins) {
+        let li = document.createElement('li');
+        li.textContent = goblin;
+        activeGoblinsDiv.append(li);
+    }
+}
 
-// Set Pl;
-
-
-
-
-
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
