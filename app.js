@@ -30,8 +30,6 @@ function displayGoblins() {
     for (let goblin of goblins) {
         let button = document.createElement('button');
         button.textContent = `${goblin.name}, ${goblin.health} health, ${goblin.emoji}`;
-        
-        
         activeGoblinsDiv.append(button); // Emoji Experiement
         button.addEventListener('click', () => {
             gamePlay(goblin);
